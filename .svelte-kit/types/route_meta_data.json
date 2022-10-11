@@ -1,3 +1,23 @@
 {
-	"": []
+	"": [],
+	"konzept": [],
+	"news": [],
+	"team": [],
+	"termine": [],
+	"impressum": [],
+	"api/news": [
+		"src/routes/api/news/+server.ts"
+	],
+	"api/termine": [
+		"src/routes/api/termine/+server.ts"
+	],
+	"api/team": [
+		"src/routes/api/team/+server.ts"
+	],
+	"api/content": [
+		"src/routes/api/content/+server.ts"
+	],
+	"api/content/[position]": [
+		"src/routes/api/content/[position]/+server.ts"
+	]
 }

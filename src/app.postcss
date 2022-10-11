@@ -1,4 +1,74 @@
-/* Write your global styles here, in PostCSS syntax */
+@import url('https://fonts.googleapis.com/css2?family=Patua+One&family=Rubik&display=swap');
+
 @tailwind base;
 @tailwind components;
-@tailwind utilities
+@tailwind utilities;
+
+/* BASICS */
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  @apply font-Rubik w-full;
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  position: relative;
+}
+
+/* TYPOGRAPHY */
+p {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-bottom: 2rem;
+}
+
+h1 {
+  @apply font-PatuaOne text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-blue-400 to-blue-700;
+  font-size: 68px;
+  line-height: 78px;
+  padding: 0 0 1.5rem 0;
+  margin: 0 auto;
+  max-width: fit-content;
+}
+h2 {
+  @apply font-PatuaOne text-primary;
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 47px;
+}
+h3 {
+  @apply font-PatuaOne text-primary;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 31px;
+}
+h4 {
+  @apply font-PatuaOne text-primary;
+  font-weight: 400;
+  font-size: 22px;
+  line-height: 26px;
+}
+a {
+  @apply underline;
+  color: #363acc;
+  transition-duration: 0.3s;
+}
+a:hover,
+nav li > a {
+  @apply no-underline;
+}
+
+h1 > a,
+h2 > a,
+h3 > a,
+h4 > a,
+h5 > a {
+  @apply no-underline;
+}
+
+.spacer {
+  height: 2rem;
+}

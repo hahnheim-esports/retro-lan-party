@@ -1,0 +1,77 @@
+<script>
+  import { page } from '$app/stores';
+</script>
+
+<header>
+  <section>
+    <div class="logoArea"><a href="/"><img src="esports-logo.webp" alt="Retro LAN Party" /></a></div>
+    <nav>
+      <ul>
+        <li>
+          <a href="/news" class={$page.routeId === 'news' ? 'active' : ''}>News</a>
+        </li>
+        <li>
+          <a href="/termine" class={$page.routeId === 'termine' ? 'active' : ''}>Termine</a>
+        </li>
+        <li>
+          <a href="/team" class={$page.routeId === 'team' ? 'active' : ''}>Team</a>
+        </li>
+        <li>
+          <a href="/konzept" class={$page.routeId === 'konzept' ? 'active' : ''}>Konzept</a>
+        </li>
+      </ul>
+    </nav>
+  </section>
+</header>
+
+<style lang="postcss">
+  header {
+    @apply sticky top-0;
+    background-color: #363acc;
+    opacity: 0.9;
+    width: 100%;
+    height: 80px;
+    filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
+    z-index: 9999;
+
+    section {
+      @apply max-w-6xl mx-auto;
+      height: 100%;
+
+      .logoArea {
+        height: 80px;
+        width: 80px;
+        padding: 0.75rem;
+        position: absolute;
+      }
+      nav {
+        @apply container mx-auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+
+        ul {
+          list-style-type: none;
+
+          > li {
+            display: inline-block;
+
+            > a {
+              color: white;
+              padding: 0.25rem;
+              margin: 0.5rem 1.5rem;
+              transition: all 0.3s ease;
+              border-bottom: 3px solid transparent;
+
+              &:hover,
+              &.active {
+                border-bottom: 2px solid white;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+</style>

@@ -1,2 +1,14 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script lang="ts">
+  import { onMount } from 'svelte';
+  onMount(async () => {
+    location.href = '/news';
+  });
+</script>
+
+<svelte:head>
+  <title>Hahnheim eSports</title>
+</svelte:head>
+
+<section class="max-w-6xl mx-auto py-10">
+  <p>Loading...</p>
+</section>
