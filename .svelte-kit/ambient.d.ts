@@ -78,6 +78,7 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_postcss: string;
 	export const npm_package_devDependencies_postcss_load_config: string;
 	export const npm_package_devDependencies_postcss_nested: string;
+	export const npm_package_devDependencies_postcss_nesting: string;
 	export const npm_package_devDependencies_prettier: string;
 	export const npm_package_devDependencies_prettier_plugin_svelte: string;
 	export const npm_package_devDependencies_svelte: string;
@@ -225,6 +226,7 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_postcss: string;
 		npm_package_devDependencies_postcss_load_config: string;
 		npm_package_devDependencies_postcss_nested: string;
+		npm_package_devDependencies_postcss_nesting: string;
 		npm_package_devDependencies_prettier: string;
 		npm_package_devDependencies_prettier_plugin_svelte: string;
 		npm_package_devDependencies_svelte: string;
