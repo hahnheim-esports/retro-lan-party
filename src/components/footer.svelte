@@ -12,7 +12,6 @@
     height: 180px;
     z-index: 9999;
 
-    section p,
     section a {
       color: white;
     }

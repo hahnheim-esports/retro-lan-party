@@ -1,8 +1,8 @@
+import type { RequestHandler } from '@sveltejs/kit';
 import { client } from '$lib/graphql-client';
 import { gql } from 'graphql-request';
 
-/** @type {import('./$types').RequestHandler} */
-export const GET = async () => {
+export const GET: RequestHandler = async () => {
   try {
     const query = gql`
       query getAppointments {

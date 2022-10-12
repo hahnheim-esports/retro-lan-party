@@ -22,6 +22,7 @@
   {#if contentSnippets}
     {#each contentSnippets as { headline, content }}
       <h1 class="pb-6">{headline}</h1>
+      <div class="spacer"></div>
       <div class="markupContent">{@html convertMarkDown(content)}</div>
     {/each}
   {/if}
