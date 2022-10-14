@@ -1,0 +1,145 @@
+{
+  ".svelte-kit/build/index.js": {
+    "file": "index.js",
+    "src": ".svelte-kit/build/index.js",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "dynamicImports": [
+      ".svelte-kit/build/hooks.js"
+    ]
+  },
+  "src/routes/api/content/+server.ts": {
+    "file": "entries/endpoints/api/content/_server.ts.js",
+    "src": "src/routes/api/content/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_graphql-client.js"
+    ]
+  },
+  "src/routes/api/news/+server.ts": {
+    "file": "entries/endpoints/api/news/_server.ts.js",
+    "src": "src/routes/api/news/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_graphql-client.js"
+    ]
+  },
+  "src/routes/api/team/+server.ts": {
+    "file": "entries/endpoints/api/team/_server.ts.js",
+    "src": "src/routes/api/team/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_graphql-client.js"
+    ]
+  },
+  "src/routes/api/termine/+server.ts": {
+    "file": "entries/endpoints/api/termine/_server.ts.js",
+    "src": "src/routes/api/termine/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_graphql-client.js"
+    ]
+  },
+  "src/routes/api/content/[position]/+server.ts": {
+    "file": "entries/endpoints/api/content/_position_/_server.ts.js",
+    "src": "src/routes/api/content/[position]/+server.ts",
+    "isEntry": true,
+    "imports": [
+      "_graphql-client.js"
+    ]
+  },
+  "src/routes/+layout.svelte": {
+    "file": "entries/pages/_layout.svelte.js",
+    "src": "src/routes/+layout.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_stores.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_layout-91764a50.css"
+    ]
+  },
+  "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
+    "file": "entries/fallbacks/error.svelte.js",
+    "src": "node_modules/@sveltejs/kit/src/runtime/components/error.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_stores.js"
+    ]
+  },
+  "src/routes/+page.svelte": {
+    "file": "entries/pages/_page.svelte.js",
+    "src": "src/routes/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-9231f219.css"
+    ]
+  },
+  "src/routes/impressum/+page.svelte": {
+    "file": "entries/pages/impressum/_page.svelte.js",
+    "src": "src/routes/impressum/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/konzept/+page.svelte": {
+    "file": "entries/pages/konzept/_page.svelte.js",
+    "src": "src/routes/konzept/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/news/+page.svelte": {
+    "file": "entries/pages/news/_page.svelte.js",
+    "src": "src/routes/news/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/team/+page.svelte": {
+    "file": "entries/pages/team/_page.svelte.js",
+    "src": "src/routes/team/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "src/routes/termine/+page.svelte": {
+    "file": "entries/pages/termine/_page.svelte.js",
+    "src": "src/routes/termine/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-4ebccc5e.css"
+    ]
+  },
+  "_index.js": {
+    "file": "chunks/index.js"
+  },
+  "_graphql-client.js": {
+    "file": "chunks/graphql-client.js"
+  },
+  "_stores.js": {
+    "file": "chunks/stores.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  ".svelte-kit/build/hooks.js": {
+    "file": "chunks/hooks.js",
+    "src": ".svelte-kit/build/hooks.js",
+    "isDynamicEntry": true
+  }
+}
