@@ -16,12 +16,7 @@ export async function GET(event) {
       }
     `;
     const { appointments } = await client.request(query);
-
-    console.log(...event.request.headers);
-
-    return json({
-      appointments
-    });
+    return appointments;
   } catch (error) {
     return new Response(String(error));
   }
