@@ -17,6 +17,5 @@ export const actions = {
         }
       `;
       const { appointments } = await client.request(query);
-      return appointments;
-  }
+      return new Response(JSON.stringify(appointments));
 };
