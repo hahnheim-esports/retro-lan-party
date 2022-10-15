@@ -1,6 +1,6 @@
 import { json } from '@sveltejs/kit';
-import { client } from '$lib/graphql-client';
 import { gql } from 'graphql-request';
+import { client } from '$lib/graphql-client';
 
 /** @type {import('./$types').RequestHandler} */
 export async function GET(event) {
