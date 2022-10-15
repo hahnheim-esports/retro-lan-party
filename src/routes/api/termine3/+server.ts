@@ -1,23 +1,19 @@
-import { json } from '@sveltejs/kit';
+import { json, error } from '@sveltejs/kit';
 import { gql } from 'graphql-request';
 import { client } from '$lib/graphql-client';
 
 /** @type {import('./$types').RequestHandler} */
-export async function GET(event) {
-  try {
-    const query = gql`
-      query getAppointments {
-        appointments(stage: PUBLISHED) {
-          name
-          description
-          date
-          appointmentsSlug
-        }
+export async function GET({ url }) {
+  const query = gql`
+    query getAppointments {
+      appointments(stage: PUBLISHED) {
+        name
+        description
+        date
+        appointmentsSlug
       }
-    `;
-    const { appointments } = await client.request(query);
-    return appointments;
-  } catch (error) {
-    return new Response(String(error));
-  }
+    }
+  `;
+  const { appointments } = await client.request(query);
+  return new Response(appointments);
 }
