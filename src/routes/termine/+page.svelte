@@ -25,7 +25,7 @@
     <div class="spacer" />
     <div class="grid grid-cols-5 gap-5">
       <div class="col-span-2">
-        {#each $appointments.data.appointments as { name, description, date }}
+        {#each $appointments.data['appointments'] as { name, description, date }}
           <h3><Time timestamp={date} format="DD.MM.YYYY" /></h3>
           {#if name}<p>{name}</p>{/if}
           {#if description}<p>{description}</p>{/if}

@@ -20,7 +20,7 @@
   {:else if $team.error}
     <p>Ein Fehler ist aufgetreten: {$team.error.message}</p>
   {:else if $team.data}
-    <h1>Unsder Team</h1>
+    <h1>Unser Team</h1>
     <div class="memberContainer ">
       {#each $team.data['teamMembers'] as member}
         <div class="memberEntry">
