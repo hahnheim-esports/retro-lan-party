@@ -4,7 +4,8 @@
   import { GET_NEWS } from '../../queries';
   import Time from 'svelte-time';
   import LOADER from '../../components/loader.svelte';
-  // import SLIDER from '../../components/slider.svelte.bkp';
+  // import SLIDER from '../../components/slider.svelte';
+  // import CAROUSEL from '../../components/carousel.svelte';
 
   setClient(myclient);
   const news = query(GET_NEWS);
