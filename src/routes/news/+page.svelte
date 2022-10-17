@@ -4,7 +4,7 @@
   import { GET_NEWS } from '../../queries';
   import Time from 'svelte-time';
   import LOADER from '../../components/loader.svelte';
-  import SLIDER from '../../components/slider.svelte';
+  // import SLIDER from '../../components/slider.svelte.bkp';
 
   setClient(myclient);
   const news = query(GET_NEWS);
@@ -14,7 +14,6 @@
   <title>Hahnheim eSports - Retro LAN Party - NEWS</title>
 </svelte:head>
 
-<SLIDER />
 <section class="max-w-6xl mx-auto py-10">
   {#if $news.loading}
     <div class="innerContainer">
