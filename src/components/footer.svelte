@@ -1,6 +1,12 @@
+<script lang="ts">
+  export let openCookieSettings = () => {};
+</script>
+
 <footer>
   <section class="max-w-6xl mx-auto py-10">
     <a href="/impressum">Impressum</a>
+    <a href="/datenschutz">Datenschutz</a>
+    <a href="javascript:void(0)" on:click={openCookieSettings}>Cookie-Einstellungen</a>
   </section>
 </footer>
 
@@ -14,6 +20,7 @@
 
     section a {
       color: white;
+      padding: 0 1.5rem 0 0;
     }
   }
 </style>

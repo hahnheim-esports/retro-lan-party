@@ -4,50 +4,20 @@
     "src": ".svelte-kit/build/index.js",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_index2.js",
+      "_index3.js"
     ],
     "dynamicImports": [
       ".svelte-kit/build/hooks.js"
     ]
   },
-  "src/routes/api/content/+server.ts": {
-    "file": "entries/endpoints/api/content/_server.ts.js",
-    "src": "src/routes/api/content/+server.ts",
+  "src/routes/api/test/+server.ts": {
+    "file": "entries/endpoints/api/test/_server.ts.js",
+    "src": "src/routes/api/test/+server.ts",
     "isEntry": true,
     "imports": [
-      "_graphql-client.js"
-    ]
-  },
-  "src/routes/api/news/+server.ts": {
-    "file": "entries/endpoints/api/news/_server.ts.js",
-    "src": "src/routes/api/news/+server.ts",
-    "isEntry": true,
-    "imports": [
-      "_graphql-client.js"
-    ]
-  },
-  "src/routes/api/team/+server.ts": {
-    "file": "entries/endpoints/api/team/_server.ts.js",
-    "src": "src/routes/api/team/+server.ts",
-    "isEntry": true,
-    "imports": [
-      "_graphql-client.js"
-    ]
-  },
-  "src/routes/api/termine/+server.ts": {
-    "file": "entries/endpoints/api/termine/_server.ts.js",
-    "src": "src/routes/api/termine/+server.ts",
-    "isEntry": true,
-    "imports": [
-      "_graphql-client.js"
-    ]
-  },
-  "src/routes/api/content/[position]/+server.ts": {
-    "file": "entries/endpoints/api/content/_position_/_server.ts.js",
-    "src": "src/routes/api/content/[position]/+server.ts",
-    "isEntry": true,
-    "imports": [
-      "_graphql-client.js"
+      "_index2.js"
     ]
   },
   "src/routes/+layout.svelte": {
@@ -59,7 +29,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout-91764a50.css"
+      "_app/immutable/assets/_layout-d50c6bf0.css"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
@@ -76,10 +46,24 @@
     "src": "src/routes/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-9231f219.css"
+      "_app/immutable/assets/_page-1106c5a9.css"
+    ]
+  },
+  "src/routes/datenschutz/+page.svelte": {
+    "file": "entries/pages/datenschutz/_page.svelte.js",
+    "src": "src/routes/datenschutz/+page.svelte",
+    "isEntry": true,
+    "imports": [
+      "_index.js",
+      "_queries.js",
+      "_loader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/impressum/+page.svelte": {
@@ -87,7 +71,12 @@
     "src": "src/routes/impressum/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_queries.js",
+      "_loader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/konzept/+page.svelte": {
@@ -95,7 +84,12 @@
     "src": "src/routes/konzept/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_queries.js",
+      "_loader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/news/+page.svelte": {
@@ -103,7 +97,13 @@
     "src": "src/routes/news/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_queries.js",
+      "_Time.js",
+      "_loader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-7ab0f63b.css"
     ]
   },
   "src/routes/team/+page.svelte": {
@@ -111,7 +111,12 @@
     "src": "src/routes/team/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_queries.js",
+      "_loader.js"
+    ],
+    "css": [
+      "_app/immutable/assets/_page-d2435a65.css"
     ]
   },
   "src/routes/termine/+page.svelte": {
@@ -119,20 +124,51 @@
     "src": "src/routes/termine/+page.svelte",
     "isEntry": true,
     "imports": [
-      "_index.js"
+      "_index.js",
+      "_queries.js",
+      "_Time.js",
+      "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-4ebccc5e.css"
+      "_app/immutable/assets/_page-cb16f7e0.css"
     ]
   },
   "_index.js": {
     "file": "chunks/index.js"
   },
-  "_graphql-client.js": {
-    "file": "chunks/graphql-client.js"
+  "_index2.js": {
+    "file": "chunks/index2.js"
+  },
+  "_index3.js": {
+    "file": "chunks/index3.js",
+    "imports": [
+      "_index.js"
+    ]
   },
   "_stores.js": {
     "file": "chunks/stores.js",
+    "imports": [
+      "_index.js"
+    ]
+  },
+  "_loader.js": {
+    "file": "chunks/loader.js",
+    "imports": [
+      "_index.js"
+    ],
+    "css": [
+      "_app/immutable/assets/loader-c75ec340.css"
+    ]
+  },
+  "_queries.js": {
+    "file": "chunks/queries.js",
+    "imports": [
+      "_index.js",
+      "_index3.js"
+    ]
+  },
+  "_Time.js": {
+    "file": "chunks/Time.js",
     "imports": [
       "_index.js"
     ]

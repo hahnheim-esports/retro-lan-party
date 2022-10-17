@@ -73,13 +73,77 @@ h5 > a {
   height: 2rem;
 }
 
-.markupContent ul {
-  list-style: disc;
-  padding-left: 1.25rem;
-
-  li {
-    padding-left: 0.25rem;
-    font-size: 1.5rem;
-    line-height: 2rem;
+.markupContent {
+  h2 {
+    padding: 0 0 1.5rem 0;
   }
+  ul {
+    list-style: disc;
+    padding-left: 1.25rem;
+
+    li {
+      padding-left: 0.25rem;
+      font-size: 1.5rem;
+      line-height: 2rem;
+    }
+  }
+}
+
+/* COOKIE NOTICE */
+.cookieConsentWrapper {
+  width: 100%;
+}
+.cookieConsent {
+  max-width: 1152px;
+  padding: 0 0 1rem 0;
+}
+.cookieConsentOperations__List {
+  max-width: 768px !important;
+}
+.cookieConsent__Right {
+  display: flex;
+  flex-wrap: wrap;
+  min-width: 350px;
+  justify-content: space-evenly;
+}
+.cookieConsent__Content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 3rem;
+  margin: 0 !important;
+}
+.cookieConsent__Content p {
+  font-size: 20px;
+  line-height: 26px;
+  padding: 0;
+}
+.cookieConsent__Content p.cookieConsent__Title {
+  @apply font-PatuaOne;
+  font-size: 28px;
+  line-height: 31px;
+  padding: 0.5rem 0;
+}
+.cookieConsent__Right button,
+.cookieConsentOperations .cookieConsent__Button--Close {
+  background: linear-gradient(180deg, #363acc 0%, #60a5fa 100%) 0% 0% no-repeat;
+  color: white;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 31px;
+  border-radius: 25px;
+  height: 47px;
+  padding: 0 1.5rem;
+  border: none;
+  text-transform: unset;
+  margin: 0.25rem;
+}
+.cookieConsentOperations .cookieConsent__Button--Close {
+  margin: 2.5rem 0 0.5rem 3.75rem;
+}
+.cookieConsent__Right button:hover,
+.cookieConsentOperations .cookieConsent__Button--Close:hover {
+  opacity: 1;
+  background: linear-gradient(270deg, #363acc 0%, #60a5fa 100%) 0% 0% no-repeat;
 }

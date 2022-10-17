@@ -43,6 +43,10 @@
         width: 80px;
         padding: 0.75rem;
         position: absolute;
+        img {
+          max-width: 56px;
+          max-height: 56px;
+        }
       }
       nav {
         @apply container mx-auto;

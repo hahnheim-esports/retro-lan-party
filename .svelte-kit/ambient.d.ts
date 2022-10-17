@@ -49,7 +49,6 @@ declare module '$env/static/private' {
 	export const LOCALAPPDATA: string;
 	export const LOGONSERVER: string;
 	export const NODE: string;
-	export const NODE_ENV: string;
 	export const npm_config_argv: string;
 	export const npm_config_bin_links: string;
 	export const npm_config_engine_strict: string;
@@ -71,12 +70,12 @@ declare module '$env/static/private' {
 	export const npm_lifecycle_event: string;
 	export const npm_lifecycle_script: string;
 	export const npm_node_execpath: string;
-	export const npm_package_dependencies_axios: string;
 	export const npm_package_dependencies_daisyui: string;
 	export const npm_package_dependencies_graphql: string;
-	export const npm_package_dependencies_graphql_request: string;
 	export const npm_package_dependencies_showdown: string;
+	export const npm_package_dependencies_svelte_apollo: string;
 	export const npm_package_dependencies_svelte_i18n: string;
+	export const npm_package_dependencies__apollo_client: string;
 	export const npm_package_description: string;
 	export const npm_package_devDependencies_autoprefixer: string;
 	export const npm_package_devDependencies_postcss: string;
@@ -94,7 +93,6 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_typescript: string;
 	export const npm_package_devDependencies_vite: string;
 	export const npm_package_devDependencies__beyonk_gdpr_cookie_consent_banner: string;
-	export const npm_package_devDependencies__sveltejs_adapter_auto: string;
 	export const npm_package_devDependencies__sveltejs_adapter_netlify: string;
 	export const npm_package_devDependencies__sveltejs_kit: string;
 	export const npm_package_devDependencies__tailwindcss_typography: string;
@@ -201,7 +199,6 @@ declare module '$env/dynamic/private' {
 		LOCALAPPDATA: string;
 		LOGONSERVER: string;
 		NODE: string;
-		NODE_ENV: string;
 		npm_config_argv: string;
 		npm_config_bin_links: string;
 		npm_config_engine_strict: string;
@@ -223,12 +220,12 @@ declare module '$env/dynamic/private' {
 		npm_lifecycle_event: string;
 		npm_lifecycle_script: string;
 		npm_node_execpath: string;
-		npm_package_dependencies_axios: string;
 		npm_package_dependencies_daisyui: string;
 		npm_package_dependencies_graphql: string;
-		npm_package_dependencies_graphql_request: string;
 		npm_package_dependencies_showdown: string;
+		npm_package_dependencies_svelte_apollo: string;
 		npm_package_dependencies_svelte_i18n: string;
+		npm_package_dependencies__apollo_client: string;
 		npm_package_description: string;
 		npm_package_devDependencies_autoprefixer: string;
 		npm_package_devDependencies_postcss: string;
@@ -246,7 +243,6 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_typescript: string;
 		npm_package_devDependencies_vite: string;
 		npm_package_devDependencies__beyonk_gdpr_cookie_consent_banner: string;
-		npm_package_devDependencies__sveltejs_adapter_auto: string;
 		npm_package_devDependencies__sveltejs_adapter_netlify: string;
 		npm_package_devDependencies__sveltejs_kit: string;
 		npm_package_devDependencies__tailwindcss_typography: string;

@@ -2,7 +2,7 @@
   import LOADER from '../components/loader.svelte';
   import { onMount } from 'svelte';
   onMount(async () => {
-   location.href = '/news';
+    location.href = '/news';
   });
 </script>
 
@@ -17,8 +17,8 @@
 </section>
 
 <style lang="postcss">
-.innerContainer {
-  @apply flex justify-center items-center;
-  min-height: calc(100vh - 340px);
-}
+  .innerContainer {
+    @apply flex justify-center items-center;
+    min-height: calc(100vh - 340px);
+  }
 </style>

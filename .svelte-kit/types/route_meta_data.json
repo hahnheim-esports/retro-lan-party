@@ -19,5 +19,16 @@
 	],
 	"api/content/[position]": [
 		"src/routes/api/content/[position]/+server.ts"
-	]
+	],
+	"api/termine2": [
+		"src/routes/api/termine2/+server.ts"
+	],
+	"api/termine3": [
+		"src/routes/api/termine3/+server.ts"
+	],
+	"api/test": [
+		"src/routes/api/test/+server.ts"
+	],
+	"impressum copy": [],
+	"datenschutz": []
 }
