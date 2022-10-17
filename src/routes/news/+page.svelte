@@ -15,6 +15,8 @@
   <title>Hahnheim eSports - Retro LAN Party - NEWS</title>
 </svelte:head>
 
+<!-- <CAROUSEL /> -->
+
 <section class="max-w-6xl mx-auto py-10">
   {#if $news.loading}
     <div class="innerContainer">

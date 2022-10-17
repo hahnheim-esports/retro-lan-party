@@ -74,7 +74,6 @@ declare module '$env/static/private' {
 	export const npm_package_dependencies_graphql: string;
 	export const npm_package_dependencies_showdown: string;
 	export const npm_package_dependencies_svelte_apollo: string;
-	export const npm_package_dependencies_svelte_carousel: string;
 	export const npm_package_dependencies_svelte_i18n: string;
 	export const npm_package_dependencies__apollo_client: string;
 	export const npm_package_description: string;
@@ -86,6 +85,7 @@ declare module '$env/static/private' {
 	export const npm_package_devDependencies_prettier: string;
 	export const npm_package_devDependencies_prettier_plugin_svelte: string;
 	export const npm_package_devDependencies_svelte: string;
+	export const npm_package_devDependencies_svelte_carousel: string;
 	export const npm_package_devDependencies_svelte_check: string;
 	export const npm_package_devDependencies_svelte_preprocess: string;
 	export const npm_package_devDependencies_svelte_time: string;
@@ -225,7 +225,6 @@ declare module '$env/dynamic/private' {
 		npm_package_dependencies_graphql: string;
 		npm_package_dependencies_showdown: string;
 		npm_package_dependencies_svelte_apollo: string;
-		npm_package_dependencies_svelte_carousel: string;
 		npm_package_dependencies_svelte_i18n: string;
 		npm_package_dependencies__apollo_client: string;
 		npm_package_description: string;
@@ -237,6 +236,7 @@ declare module '$env/dynamic/private' {
 		npm_package_devDependencies_prettier: string;
 		npm_package_devDependencies_prettier_plugin_svelte: string;
 		npm_package_devDependencies_svelte: string;
+		npm_package_devDependencies_svelte_carousel: string;
 		npm_package_devDependencies_svelte_check: string;
 		npm_package_devDependencies_svelte_preprocess: string;
 		npm_package_devDependencies_svelte_time: string;
