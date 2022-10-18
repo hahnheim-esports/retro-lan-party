@@ -39,11 +39,7 @@
 </script>
 
 <HEADER />
-
-<div class="mainContentContainer">
-  <slot />
-</div>
-
+<slot />
 <FOOTER openCookieSettings={showCookieBanner} />
 
 <GdprBanner
@@ -58,9 +54,3 @@
   heading="Wir verwenden Cookies..."
   description="Wir verwenden Cookies und ähnliche Technologien, um Dienste bzw. Funktionen auf unserer Website zu gewährleisten und um zu verstehen, wie Sie diese nutzen. Indem Sie auf „Zustimmen“ klicken, stimmen Sie deren Verwendung zu."
 />
-
-<style lang="postcss">
-  .mainContentContainer {
-    min-height: calc(100vh - 260px);
-  }
-</style>

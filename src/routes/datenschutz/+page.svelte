@@ -18,7 +18,7 @@
   <title>Hahnheim eSports - Retro LAN Party - DATENSCHUTZ</title>
 </svelte:head>
 
-<section class="max-w-6xl mx-auto py-10">
+<section>
   {#if $contentSnippets.loading}
     <div class="innerContainer">
       <LOADER />
@@ -28,17 +28,10 @@
   {:else if $contentSnippets.data}
     <div class="contentContainer ">
       {#each $contentSnippets.data['contentSnippets'] as snippet}
-        <h1 class="pb-6">{snippet.headline}</h1>
+        <h1>{snippet.headline}</h1>
         <div class="spacer" />
         <div class="markupContent">{@html convertMarkDown(snippet.content)}</div>
       {/each}
     </div>
   {/if}
 </section>
-
-<style lang="postcss">
-  .innerContainer {
-    @apply flex justify-center items-center;
-    min-height: calc(100vh - 340px);
-  }
-</style>

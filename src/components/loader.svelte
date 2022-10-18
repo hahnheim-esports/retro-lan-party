@@ -1,20 +1,19 @@
-<div class="loader-dual-ring"></div>
+<div class="loader-dual-ring" />
 
 <style lang="postcss">
   .loader-dual-ring {
     display: inline-block;
-    opacity: 0.9;
-    width: 80px;
-    height: 80px;
+    width: 110px;
+    height: 110px;
     &:after {
       content: '';
       display: block;
-      width: 64px;
-      height: 64px;
-      margin: 8px;
+      width: 88px;
+      height: 88px;
+      margin: 12px;
       border-radius: 50%;
-      border: 6px solid #363acc;
-      border-color: #363acc transparent #363acc transparent;
+      border: 10px solid var(--primary);
+      border-color: var(--primary) transparent var(--primary) transparent;
       animation: dual-ring-spin 1.2s linear infinite;
     }
   }

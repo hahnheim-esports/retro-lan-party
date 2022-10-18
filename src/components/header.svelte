@@ -27,15 +27,14 @@
 <style lang="postcss">
   header {
     @apply sticky top-0;
-    background-color: #363acc;
-    opacity: 0.9;
+    background-color: var(--primary);
     width: 100%;
     height: 80px;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
     z-index: 9999;
 
     section {
-      @apply max-w-6xl mx-auto;
+      @apply max-w-7xl mx-auto px-4 md:px-6;
       height: 100%;
 
       .logoArea {
@@ -64,7 +63,7 @@
             > a {
               color: white;
               padding: 0.25rem;
-              margin: 0.5rem 1.5rem;
+              margin: 0.5rem 1.25rem;
               transition: all 0.3s ease;
               border-bottom: 3px solid transparent;
 

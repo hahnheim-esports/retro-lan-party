@@ -17,27 +17,32 @@
 <svelte:head>
   <title>Hahnheim eSports - Retro LAN Party - KONZEPT</title>
 </svelte:head>
-<section class="max-w-6xl mx-auto py-10">
-  {#if $contentSnippets.loading}
-    <div class="innerContainer">
-      <LOADER />
-    </div>
-  {:else if $contentSnippets.error}
-    <p>Ein Fehler ist aufgetreten: {$contentSnippets.error.message}</p>
-  {:else if $contentSnippets.data}
-    <div class="contentContainer ">
-      {#each $contentSnippets.data['contentSnippets'] as snippet}
-        <h1 class="pb-6">{snippet.headline}</h1>
-        <div class="spacer" />
-        <div class="markupContent">{@html convertMarkDown(snippet.content)}</div>
-      {/each}
-    </div>
-  {/if}
-</section>
+
+<div class="gamingBackground">
+  <section class="layoutSection">
+    {#if $contentSnippets.loading}
+      <div class="innerContainer">
+        <LOADER />
+      </div>
+    {:else if $contentSnippets.error}
+      <p>Ein Fehler ist aufgetreten: {$contentSnippets.error.message}</p>
+    {:else if $contentSnippets.data}
+      <div class="contentContainer ">
+        {#each $contentSnippets.data['contentSnippets'] as snippet}
+          <h1>{snippet.headline}</h1>
+          <div class="spacer" />
+          <div class="markupContent">{@html convertMarkDown(snippet.content)}</div>
+        {/each}
+      </div>
+    {/if}
+  </section>
+</div>
 
 <style lang="postcss">
-  .innerContainer {
-    @apply flex justify-center items-center;
-    min-height: calc(100vh - 340px);
+  .gamingBackground {
+    position: relative;
+    background-image: url(gaming-logos-background-soft.png);
+    background-position: bottom left;
+    background-repeat: no-repeat;
   }
 </style>

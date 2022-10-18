@@ -4,6 +4,14 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --primary: #363acc;
+  --secondary: #696dff;
+  --bright-blue: #60a5fa;
+  --grey: #bbd0d1;
+  --dark-grey: #686969;
+}
+
 /* BASICS */
 * {
   margin: 0;
@@ -20,40 +28,32 @@ body {
 
 /* TYPOGRAPHY */
 p {
-  font-size: 1.5rem;
-  line-height: 2rem;
-  padding-bottom: 2rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  padding-bottom: 1.75rem;
 }
 
 h1 {
-  @apply font-PatuaOne text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-blue-400 to-blue-700;
-  font-size: 68px;
-  line-height: 78px;
+  @apply font-PatuaOne text-transparent bg-clip-text bg-gradient-to-r from-blue-800 via-blue-400 to-blue-700 text-5xl md:text-6xl;
   padding: 0 0 1.5rem 0;
   margin: 0 auto;
   max-width: fit-content;
 }
 h2 {
-  @apply font-PatuaOne text-primary;
-  font-weight: 400;
-  font-size: 40px;
-  line-height: 47px;
+  @apply font-PatuaOne text-primary text-3xl md:text-4xl;
+  padding: 0 0 1.5rem 0;
 }
 h3 {
-  @apply font-PatuaOne text-primary;
-  font-weight: 400;
-  font-size: 28px;
-  line-height: 31px;
+  @apply font-PatuaOne text-primary text-xl md:text-2xl;
+  padding: 0 0 1.5rem 0;
 }
 h4 {
-  @apply font-PatuaOne text-primary;
-  font-weight: 400;
-  font-size: 22px;
-  line-height: 26px;
+  @apply font-PatuaOne text-primary  text-lg md:text-xl;
+  padding: 0 0 1.5rem 0;
 }
 a {
   @apply underline;
-  color: #363acc;
+  color: var(--primary);
   transition-duration: 0.3s;
 }
 a:hover,
@@ -69,8 +69,19 @@ h5 > a {
   @apply no-underline;
 }
 
-.spacer {
-  height: 2rem;
+/* GLOBAL RULES */
+body > div > section,
+section.layoutSection {
+  @apply max-w-7xl mx-auto px-4 md:px-6 pb-8 md:pb-12  pt-9 md:pt-14;
+  min-height: calc(100vh - 256px);
+}
+.innerContainer {
+  @apply flex justify-center items-center;
+  min-height: calc(100vh - 352px);
+}
+.caption {
+  color: var(--dark-grey);
+  padding: 0.25rem 0;
 }
 
 .markupContent {
@@ -83,10 +94,27 @@ h5 > a {
 
     li {
       padding-left: 0.25rem;
-      font-size: 1.5rem;
-      line-height: 2rem;
+      font-size: 1.25rem;
+      line-height: 1.75rem;
     }
   }
+}
+
+/* HELPER */
+.fade-in {
+  animation: fadein´0.66s;
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.spacer {
+  height: 2rem;
 }
 
 /* COOKIE NOTICE */
@@ -127,7 +155,7 @@ h5 > a {
 }
 .cookieConsent__Right button,
 .cookieConsentOperations .cookieConsent__Button--Close {
-  background: linear-gradient(180deg, #363acc 0%, #60a5fa 100%) 0% 0% no-repeat;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--secondary) 100%) 0% 0% no-repeat;
   color: white;
   font-weight: 700;
   font-size: 18px;
@@ -145,15 +173,12 @@ h5 > a {
 .cookieConsent__Right button:hover,
 .cookieConsentOperations .cookieConsent__Button--Close:hover {
   opacity: 1;
-  background: linear-gradient(270deg, #363acc 0%, #60a5fa 100%) 0% 0% no-repeat;
+  background: linear-gradient(270deg, var(--primary) 0%, var(--secondary) 100%) 0% 0% no-repeat;
 }
 
-.splide li.splide__slide,
-.splide .splide__track {
-  li.splide__slide {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* SVELTE CAROUSEL */
+.sc-carousel__carousel-container {
+  .sc-carousel-dots__container {
+    padding: 1rem 0 !important;
   }
-  min-height: 500px;
 }

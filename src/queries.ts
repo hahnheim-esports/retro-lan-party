@@ -35,6 +35,7 @@ export const GET_APPOINTMENTS = gql`
       name
       description
       date
+      pastEvent
       appointmentsSlug
     }
   }

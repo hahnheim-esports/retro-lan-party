@@ -12,7 +12,7 @@
   <title>Hahnheim eSports - Retro LAN Party - TEAM</title>
 </svelte:head>
 
-<section class="max-w-6xl mx-auto py-10">
+<section>
   {#if $team.loading}
     <div class="innerContainer">
       <LOADER />
@@ -43,10 +43,6 @@
 </section>
 
 <style lang="postcss">
-  .innerContainer {
-    @apply flex justify-center items-center;
-    min-height: calc(100vh - 340px);
-  }
   .memberContainer {
     @apply grid grid-cols-4 gap-10;
 

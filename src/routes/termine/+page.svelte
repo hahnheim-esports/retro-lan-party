@@ -4,6 +4,7 @@
   import { GET_APPOINTMENTS } from '../../queries';
   import Time from 'svelte-time';
   import LOADER from '../../components/loader.svelte';
+  import CONTACTWIDGET from '../../components/contact-widget.svelte';
 
   setClient(myclient);
   const appointments = query(GET_APPOINTMENTS);
@@ -13,7 +14,7 @@
   <title>Hahnheim eSports - Retro LAN Party - TERMINE</title>
 </svelte:head>
 
-<section class="max-w-6xl mx-auto py-10">
+<section>
   {#if $appointments.loading}
     <div class="innerContainer">
       <LOADER />
@@ -24,31 +25,44 @@
     <h1>Unsere Termine für 2022</h1>
     <div class="spacer" />
     <div class="grid grid-cols-5 gap-5">
-      <div class="col-span-2">
-        {#each $appointments.data['appointments'] as { name, description, date }}
-          <h3><Time timestamp={date} format="DD.MM.YYYY" /></h3>
-          {#if name}<p>{name}</p>{/if}
-          {#if description}<p>{description}</p>{/if}
+      <div class="col-span-2 ">
+        {#each $appointments.data['appointments'] as { name, description, date, pastEvent }}
+          <div class="appointmentContainer">
+            <h3 class={!pastEvent ? 'futurDate' : ''}><Time timestamp={date} format="DD.MM.YYYY" /></h3>
+            {#if name}<p class="appointmentName">{name}</p>{/if}
+            {#if description}<p class="appointmentDescription">{description}</p>{/if}
+          </div>
         {/each}
       </div>
-      <div class="col-span-3 imageContainer">
-        <img src="termine.webp" alt="Termine" />
+      <div class="col-span-3 flex justify-end items-center">
+        <img src="https://media.graphassets.com/qxgnZYoAR6wuw6OAyZdU" alt="Termine" class="fluidImage" />
       </div>
     </div>
   {/if}
 </section>
+<CONTACTWIDGET />
 
 <style lang="postcss">
-  .innerContainer {
-    @apply flex justify-center items-center;
-    min-height: calc(100vh - 340px);
+  .appointmentContainer {
+    padding-bottom: 2rem;
+    h3 {
+      padding: 0;
+      &.futurDate {
+        color: var(--grey);
+      }
+    }
+    p {
+      padding: 0;
+      font-size: 1.25rem;
+
+      &.appointmentName {
+        padding: 0.25rem 0;
+      }
+    }
   }
-  h3 {
-    padding-bottom: 0.5rem;
-  }
-  .imageContainer {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+
+  img.fluidImage {
+    width: 100%;
+    height: auto;
   }
 </style>

@@ -1,20 +1,96 @@
-<script context="module">
-  // import Carousel from 'svelte-carousel';
-</script>
-
 <script>
-  let carousel; // for calling methods of the carousel instance
-  const handleNextClick = () => {
-    carousel.goToNext();
-  };
+  import { onMount } from 'svelte';
+
+  let Carousel;
+  onMount(async () => {
+    const module = await import('svelte-carousel');
+    Carousel = module.default;
+  });
+
+  const sliderItems = [
+    {
+      title: 'eSports Slider Image 01',
+      url: 'https://media.graphassets.com/wnf1leIRFKh0GPrbSqMA'
+    },
+    {
+      title: 'eSports Slider Image 02',
+      url: 'https://media.graphassets.com/GnkkjphYQbmqRXyLg9xB'
+    },
+    {
+      title: 'eSports Slider Image 03',
+      url: 'https://media.graphassets.com/uNsZZd5kRtPj9LZ08afg'
+    },
+    {
+      title: 'eSports Slider Image 04',
+      url: 'https://media.graphassets.com/T4VGdaZzRjmm0ZfCTJFW'
+    },
+    {
+      title: 'eSports Slider Image 05',
+      url: 'https://media.graphassets.com/XahyeN4iQVuTF74C1Gjh'
+    },
+    {
+      title: 'eSports Slider Image 06',
+      url: 'https://media.graphassets.com/4HLzpuvtTyKIpW42gEMp'
+    }
+  ];
 </script>
 
-<!--
-<Carousel bind:this={carousel}>
-  <div>1</div>
-  <div>2</div>
-  <div>3</div>
-</Carousel>
+<div class="carouselContainer fade-in">
+  <div class="carouselInner">
+    <svelte:component this={Carousel} let:showPrevPage let:showNextPage autoplay="true">
+      <button type="button" slot="prev" on:click={showPrevPage}><div class="icon leftArrow" /></button>
+      {#each sliderItems as item}
+        <div class="imageWrapper fade-in">
+          <img src={item.url} alt={item.title} class="fade-in" />
+        </div>
+      {/each}
+      <button type="button" slot="next" on:click={showNextPage}><div class="icon rightArrow" /></button>
+    </svelte:component>
+  </div>
+</div>
 
-<button on:click={handleNextClick}>Next</button>
--->
+<style lang="postcss">
+  .carouselContainer {
+    width: 100%;
+    height: 800px;
+    background: var(--secondary);
+    padding: 50px 0;
+    --sc-color-rgb-light: #ffffff;
+
+    .carouselInner {
+      @apply max-w-7xl mx-auto;
+      max-height: 690px;
+
+      .imageWrapper {
+        width: 100%;
+        heigth: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        img {
+          max-height: 690px;
+          height: 100%;
+          width: auto;
+        }
+      }
+
+      div.icon {
+        width: 50px;
+        height: 50px;
+
+        &:hover {
+          opacity: 0.75;
+        }
+
+        &.leftArrow {
+          background-image: url(left-arrow.svg);
+        }
+        &.rightArrow {
+          background-image: url(right-arrow.svg);
+        }
+      }
+    }
+  }
+</style>

@@ -4,8 +4,7 @@
   import { GET_NEWS } from '../../queries';
   import Time from 'svelte-time';
   import LOADER from '../../components/loader.svelte';
-  // import SLIDER from '../../components/slider.svelte';
-  // import CAROUSEL from '../../components/carousel.svelte';
+  import CAROUSEL from '../../components/carousel.svelte';
 
   setClient(myclient);
   const news = query(GET_NEWS);
@@ -15,9 +14,9 @@
   <title>Hahnheim eSports - Retro LAN Party - NEWS</title>
 </svelte:head>
 
-<!-- <CAROUSEL /> -->
+<CAROUSEL />
 
-<section class="max-w-6xl mx-auto py-10">
+<section>
   {#if $news.loading}
     <div class="innerContainer">
       <LOADER />
@@ -31,7 +30,7 @@
         <div class="newsEntry">
           <div class="newsContent">
             <h3>{entry.title}</h3>
-            <p class="date"><Time timestamp={entry.published} format="DD.MM.YYYY - HH:mm" /></p>
+            <p class="date">Veröffentlicht: <Time timestamp={entry.published} format="DD.MM.YYYY - HH:mm" /></p>
             <p>{entry.copy}</p>
           </div>
           {#if entry.newsImages?.length}
@@ -49,19 +48,22 @@
 </section>
 
 <style lang="postcss">
-  .innerContainer {
-    @apply flex justify-center items-center;
-    min-height: calc(100vh - 340px);
-  }
   .newsContainer {
     @apply flex flex-col;
 
     .newsEntry {
       @apply py-10 grid grid-cols-2 gap-10;
+      border-top: 1px solid var(--grey);
+
+      h3,
+      p {
+        padding: 0;
+      }
 
       .date {
         font-size: 1rem;
-        opacity: 0.6;
+        color: var(--dark-grey);
+        padding: 0.25rem 0 1.25rem 0;
       }
     }
   }
