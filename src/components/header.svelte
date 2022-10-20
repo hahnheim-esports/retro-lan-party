@@ -50,9 +50,13 @@
       nav {
         @apply container mx-auto;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
         height: 100%;
+
+        @media (min-width: 640px) {
+          justify-content: center;
+        }
 
         ul {
           list-style-type: none;
@@ -62,10 +66,16 @@
 
             > a {
               color: white;
+              font-size: 14px;
               padding: 0.25rem;
-              margin: 0.5rem 1.25rem;
+              margin: 0.5rem 0.3rem;
               transition: all 0.3s ease;
               border-bottom: 3px solid transparent;
+
+              @media (min-width: 640px) {
+                font-size: 17px;
+                margin: 0.5rem 1.25rem;
+              }
 
               &:hover,
               &.active {

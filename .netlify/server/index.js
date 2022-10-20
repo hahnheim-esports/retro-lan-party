@@ -88,7 +88,7 @@ function is_content_type(request, ...types) {
 function is_form_content_type(request) {
   return is_content_type(request, "application/x-www-form-urlencoded", "multipart/form-data");
 }
-const DATA_SUFFIX = "/__data.js";
+const DATA_SUFFIX = "/__data.json";
 function check_method_names(mod) {
   ["get", "post", "put", "patch", "del"].forEach((m) => {
     if (m in mod) {
@@ -122,16 +122,16 @@ function allowed_methods(mod) {
 }
 function data_response(data) {
   const headers = {
-    "content-type": "application/javascript",
+    "content-type": "application/json",
     "cache-control": "private, no-store"
   };
   try {
-    return new Response(`window.__sveltekit_data = ${devalue.uneval(data)}`, { headers });
+    return new Response(devalue.stringify(data), { headers });
   } catch (e) {
     const error2 = e;
     const match = /\[(\d+)\]\.data\.(.+)/.exec(error2.path);
     const message = match ? `${error2.message} (data.${match[2]})` : error2.message;
-    return new Response(`throw new Error(${JSON.stringify(message)})`, { headers });
+    return new Response(JSON.stringify(message), { headers, status: 500 });
   }
 }
 function get_option(nodes, option) {
@@ -288,19 +288,19 @@ async function handle_action_json_request(event, options, server) {
         location: error2.location
       });
     }
-    if (!(error2 instanceof HttpError)) {
-      options.handle_error(error2, event);
-    }
     return action_json(
       {
         type: "error",
-        error: handle_error_and_jsonify(event, options, error2)
+        error: handle_error_and_jsonify(event, options, check_incorrect_invalid_use(error2))
       },
       {
         status: error2 instanceof HttpError ? error2.status : 500
       }
     );
   }
+}
+function check_incorrect_invalid_use(error2) {
+  return error2 instanceof ValidationError ? new Error(`Cannot "throw invalid()". Use "return invalid()"`) : error2;
 }
 function action_json(data, init2) {
   return json(data, init2);
@@ -341,7 +341,10 @@ async function handle_action_request(event, server) {
         location: error2.location
       };
     }
-    return { type: "error", error: error2 };
+    return {
+      type: "error",
+      error: check_incorrect_invalid_use(error2)
+    };
   }
 }
 function check_named_default_separate(actions) {
@@ -1401,10 +1404,10 @@ async function render_page(event, route, page, options, state, resolve_opts) {
           const err = normalize_error(e);
           if (err instanceof Redirect) {
             if (state.prerendering && should_prerender_data) {
-              const body = `window.__sveltekit_data = ${JSON.stringify({
+              const body = devalue.stringify({
                 type: "redirect",
                 location: err.location
-              })}`;
+              });
               state.prerendering.dependencies.set(data_pathname, {
                 response: new Response(body),
                 body
@@ -1445,10 +1448,10 @@ async function render_page(event, route, page, options, state, resolve_opts) {
       }
     }
     if (state.prerendering && should_prerender_data) {
-      const body = `window.__sveltekit_data = ${devalue.uneval({
+      const body = devalue.stringify({
         type: "data",
         nodes: branch.map((branch_node) => branch_node == null ? void 0 : branch_node.server_data)
-      })}`;
+      });
       state.prerendering.dependencies.set(data_pathname, {
         response: new Response(body),
         body
@@ -1516,15 +1519,13 @@ async function render_data(event, route, options, state) {
   }
   try {
     const node_ids = [...route.page.layouts, route.page.leaf];
-    const invalidated = ((_a = event.url.searchParams.get("__invalid")) == null ? void 0 : _a.split("").map((x) => x === "y")) ?? node_ids.map(() => true);
+    const invalidated = ((_a = event.request.headers.get("x-sveltekit-invalidated")) == null ? void 0 : _a.split(",").map(Boolean)) ?? node_ids.map(() => true);
     let aborted = false;
     const url = new URL(event.url);
     url.pathname = normalize_path(
       url.pathname.slice(0, -DATA_SUFFIX.length),
       options.trailing_slash
     );
-    url.searchParams.delete("__invalid");
-    url.searchParams.delete("__id");
     const new_event = { ...event, url };
     const functions = node_ids.map((n, i) => {
       return once(async () => {
@@ -2014,7 +2015,14 @@ async function respond(request, options, state) {
       const etag = response.headers.get("etag");
       if (if_none_match_value === etag) {
         const headers2 = new Headers({ etag });
-        for (const key2 of ["cache-control", "content-location", "date", "expires", "vary"]) {
+        for (const key2 of [
+          "cache-control",
+          "content-location",
+          "date",
+          "expires",
+          "vary",
+          "set-cookie"
+        ]) {
           const value = response.headers.get(key2);
           if (value)
             headers2.set(key2, value);
@@ -2037,7 +2045,7 @@ function set_paths(paths) {
   base = paths.base;
   assets = paths.assets || base;
 }
-const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<link rel="icon" href="' + assets2 + '/favicon.png" />\n		<meta name="viewport" content="width=device-width" />\n		' + head + "\n	</head>\n	<body>\n		<div>" + body + "</div>\n	</body>\n</html>\n";
+const app_template = ({ head, body, assets: assets2, nonce }) => '<!DOCTYPE html>\r\n<html lang="en">\r\n  <head>\r\n    <meta charset="utf-8" />\r\n    <link rel="icon" href="favicon.ico" />\r\n    <link rel="icon" type="image/svg+xml" href="svelte.svg" />\r\n    <meta name="viewport" content="width=device-width" />\r\n    ' + head + "\r\n  </head>\r\n  <body>\r\n    <div>" + body + "</div>\r\n  </body>\r\n</html>\r\n";
 const error_template = ({ status, message }) => '<!DOCTYPE html>\n<html lang="en">\n	<head>\n		<meta charset="utf-8" />\n		<title>' + message + `</title>
 
 		<style>

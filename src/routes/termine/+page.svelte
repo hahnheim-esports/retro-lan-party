@@ -24,8 +24,8 @@
   {:else if $appointments.data}
     <h1>Unsere Termine für 2022</h1>
     <div class="spacer" />
-    <div class="grid grid-cols-5 gap-5">
-      <div class="col-span-2 ">
+    <div class="grid grid-cols-5 gap-5 mx-auto max-w-5xl">
+      <div class="col-span-5 sm:col-span-2">
         {#each $appointments.data['appointments'] as { name, description, date, pastEvent }}
           <div class="appointmentContainer">
             <h3 class={!pastEvent ? 'futurDate' : ''}><Time timestamp={date} format="DD.MM.YYYY" /></h3>
@@ -34,13 +34,16 @@
           </div>
         {/each}
       </div>
-      <div class="col-span-3 flex justify-end items-center">
+      <div class="order-first sm:order-last col-span-5 sm:col-span-3 flex justify-end items-center pb-8 sm:pb-0">
         <img src="https://media.graphassets.com/qxgnZYoAR6wuw6OAyZdU" alt="Termine" class="fluidImage" />
       </div>
     </div>
   {/if}
 </section>
-<CONTACTWIDGET />
+
+{#if $appointments.loading}
+  <CONTACTWIDGET />
+{/if}
 
 <style lang="postcss">
   .appointmentContainer {
@@ -63,6 +66,7 @@
 
   img.fluidImage {
     width: 100%;
+    max-width: 580px;
     height: auto;
   }
 </style>

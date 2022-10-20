@@ -1,9 +1,10 @@
 export const manifest = {
 	appDir: "_app",
-	assets: new Set(["esports-logo.webp","favicon.png","termine.webp"]),
-	mimeTypes: {".webp":"image/webp",".png":"image/png"},
+	appPath: "_app",
+	assets: new Set(["esports-logo.webp","svelte.ico","svelte.svg"]),
+	mimeTypes: {".webp":"image/webp",".ico":"image/vnd.microsoft.icon",".svg":"image/svg+xml"},
 	_: {
-		entry: {"file":"_app/immutable/start-91b364d6.js","imports":["_app/immutable/start-91b364d6.js","_app/immutable/chunks/index-12be3c58.js","_app/immutable/chunks/singletons-794d5445.js","_app/immutable/chunks/index-c8f96e03.js"],"stylesheets":[]},
+		entry: {"file":"_app/immutable/start-3cacbdc1.js","imports":["_app/immutable/start-3cacbdc1.js","_app/immutable/chunks/index-840dbd00.js","_app/immutable/chunks/singletons-df75c4d9.js","_app/immutable/chunks/index-a183a804.js","_app/immutable/chunks/preload-helper-aa6bc0ce.js"],"stylesheets":[]},
 		nodes: [
 			() => import('./nodes/0.js'),
 			() => import('./nodes/1.js'),

@@ -2,7 +2,7 @@ import { gql } from '@apollo/client/core';
 
 export const GET_NEWS = gql`
   query getNews {
-    newsEntries(stage: PUBLISHED, orderBy: published_DESC) {
+    newsEntries(stage: PUBLISHED, orderBy: published_DESC, first: 50) {
       title
       copy
       published
@@ -17,13 +17,14 @@ export const GET_NEWS = gql`
 
 export const GET_TEAM = gql`
   query getTeam {
-    teamMembers(stage: PUBLISHED) {
+    teamMembers(stage: PUBLISHED, orderBy: orderPosition_ASC, first: 50) {
       name
       description
       image {
         url
         caption
       }
+      orderPosition
       teamSlug
     }
   }
@@ -31,7 +32,7 @@ export const GET_TEAM = gql`
 
 export const GET_APPOINTMENTS = gql`
   query getAppointments {
-    appointments(stage: PUBLISHED) {
+    appointments(stage: PUBLISHED, first: 50) {
       name
       description
       date

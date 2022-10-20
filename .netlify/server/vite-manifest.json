@@ -29,7 +29,7 @@
       "_stores.js"
     ],
     "css": [
-      "_app/immutable/assets/_layout-d50c6bf0.css"
+      "_app/immutable/assets/_layout-0dac1d18.css"
     ]
   },
   "node_modules/@sveltejs/kit/src/runtime/components/error.svelte": {
@@ -48,9 +48,6 @@
     "imports": [
       "_index.js",
       "_loader.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/datenschutz/+page.svelte": {
@@ -61,9 +58,6 @@
       "_index.js",
       "_queries.js",
       "_loader.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/impressum/+page.svelte": {
@@ -74,9 +68,6 @@
       "_index.js",
       "_queries.js",
       "_loader.js"
-    ],
-    "css": [
-      "_app/immutable/assets/_page-1106c5a9.css"
     ]
   },
   "src/routes/konzept/+page.svelte": {
@@ -89,7 +80,10 @@
       "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-1106c5a9.css"
+      "_app/immutable/assets/_page-4fe1c303.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/gaming-logos-background-soft-b1a0b46e.png"
     ]
   },
   "src/routes/news/+page.svelte": {
@@ -103,7 +97,11 @@
       "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-7ab0f63b.css"
+      "_app/immutable/assets/_page-5e1abd6c.css"
+    ],
+    "assets": [
+      "_app/immutable/assets/left-arrow-c7c7ff00.svg",
+      "_app/immutable/assets/right-arrow-0d70b47a.svg"
     ]
   },
   "src/routes/team/+page.svelte": {
@@ -116,7 +114,7 @@
       "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-d2435a65.css"
+      "_app/immutable/assets/_page-fb8fec7b.css"
     ]
   },
   "src/routes/termine/+page.svelte": {
@@ -130,7 +128,7 @@
       "_loader.js"
     ],
     "css": [
-      "_app/immutable/assets/_page-cb16f7e0.css"
+      "_app/immutable/assets/_page-99b3d0ce.css"
     ]
   },
   "_index.js": {
@@ -157,7 +155,7 @@
       "_index.js"
     ],
     "css": [
-      "_app/immutable/assets/loader-c75ec340.css"
+      "_app/immutable/assets/loader-233a8bf5.css"
     ]
   },
   "_queries.js": {

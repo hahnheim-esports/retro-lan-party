@@ -30,8 +30,8 @@
         <div class="newsEntry">
           <div class="newsContent">
             <h3>{entry.title}</h3>
-            <p class="date">Veröffentlicht: <Time timestamp={entry.published} format="DD.MM.YYYY - HH:mm" /></p>
-            <p>{entry.copy}</p>
+            <p class="date">Veröffentlicht am <Time timestamp={entry.published} format="DD.MM.YYYY" /></p>
+            {#if entry.copy}<p>{entry.copy}</p>{/if}
           </div>
           {#if entry.newsImages?.length}
             <div class="newsImage">
@@ -52,8 +52,15 @@
     @apply flex flex-col;
 
     .newsEntry {
-      @apply py-10 grid grid-cols-2 gap-10;
+      @apply py-10 grid grid-cols-2 gap-4 sm:gap-10;
       border-top: 1px solid var(--grey);
+
+      .newsContent {
+        @apply col-span-2 sm:col-span-1;
+      }
+      .newsImage {
+        @apply order-first sm:order-last col-span-2 sm:col-span-1;
+      }
 
       h3,
       p {

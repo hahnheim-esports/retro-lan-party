@@ -41,8 +41,8 @@
 <style lang="postcss">
   .gamingBackground {
     position: relative;
-    background-image: url(gaming-logos-background-soft.png);
-    background-position: bottom left;
+    background-image: url(../../lib/assets/gaming-logos-background-soft.png);
+    background-position: center center;
     background-repeat: no-repeat;
   }
 </style>

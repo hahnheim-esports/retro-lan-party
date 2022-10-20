@@ -52,10 +52,14 @@
 <style lang="postcss">
   .carouselContainer {
     width: 100%;
-    height: 800px;
+    max-height: 825px;
     background: var(--secondary);
-    padding: 50px 0;
+    padding: 0;
     --sc-color-rgb-light: #ffffff;
+
+    @media (min-width: 640px) {
+      padding: 50px 0 75px 0;
+    }
 
     .carouselInner {
       @apply max-w-7xl mx-auto;
@@ -63,7 +67,7 @@
 
       .imageWrapper {
         width: 100%;
-        heigth: 100%;
+        height: 100%;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -71,7 +75,7 @@
 
         img {
           max-height: 690px;
-          height: 100%;
+          height: auto;
           width: auto;
         }
       }
@@ -85,10 +89,10 @@
         }
 
         &.leftArrow {
-          background-image: url(left-arrow.svg);
+          background-image: url(../lib/assets/left-arrow.svg);
         }
         &.rightArrow {
-          background-image: url(right-arrow.svg);
+          background-image: url(../lib/assets/right-arrow.svg);
         }
       }
     }

@@ -1,27 +1,27 @@
-import { c as create_ssr_component, b as subscribe, e as escape, d as null_to_empty, f as createEventDispatcher, v as validate_component } from "../../chunks/index.js";
+import { c as create_ssr_component, b as subscribe, e as escape, d as null_to_empty, f as add_attribute, g as createEventDispatcher, v as validate_component } from "../../chunks/index.js";
 import { p as page } from "../../chunks/stores.js";
 import "js-cookie";
 const app = "";
 const header_svelte_svelte_type_style_lang = "";
-const css$2 = {
-  code: "header.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{position:sticky;top:0px;background-color:#363acc;opacity:0.9;width:100%;height:80px;filter:drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));z-index:9999}header.svelte-1yn6tb2 section.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{margin-left:auto;margin-right:auto;max-width:72rem;height:100%}header.svelte-1yn6tb2 section .logoArea.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{height:80px;width:80px;padding:0.75rem;position:absolute}header.svelte-1yn6tb2 section .logoArea img.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:56px;max-height:56px}header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{width:100%}@media(min-width: 640px){header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:640px}}@media(min-width: 768px){header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:768px}}@media(min-width: 1024px){header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:1024px}}@media(min-width: 1280px){header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:1280px}}@media(min-width: 1536px){header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{max-width:1536px}}header.svelte-1yn6tb2 section nav.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;height:100%}header.svelte-1yn6tb2 section nav ul.svelte-1yn6tb2.svelte-1yn6tb2.svelte-1yn6tb2{list-style-type:none}header.svelte-1yn6tb2 section nav ul.svelte-1yn6tb2>li.svelte-1yn6tb2.svelte-1yn6tb2{display:inline-block}header.svelte-1yn6tb2 section nav ul.svelte-1yn6tb2>li.svelte-1yn6tb2>a.svelte-1yn6tb2{color:white;padding:0.25rem;margin:0.5rem 1.5rem;transition:all 0.3s ease;border-bottom:3px solid transparent}header.svelte-1yn6tb2 section nav ul.svelte-1yn6tb2>li.svelte-1yn6tb2>a.svelte-1yn6tb2:hover,header.svelte-1yn6tb2 section nav ul.svelte-1yn6tb2>li.svelte-1yn6tb2>a.active.svelte-1yn6tb2{border-bottom:2px solid white}",
+const css$1 = {
+  code: "header.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{position:sticky;top:0px;background-color:var(--primary);width:100%;height:80px;filter:drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));z-index:9999}header.svelte-1i81w4j section.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{margin-left:auto;margin-right:auto;max-width:80rem;padding-left:1rem;padding-right:1rem}@media(min-width: 768px){header.svelte-1i81w4j section.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{padding-left:1.5rem;padding-right:1.5rem}}header.svelte-1i81w4j section.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{height:100%}header.svelte-1i81w4j section .logoArea.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{height:80px;width:80px;padding:0.75rem;position:absolute}header.svelte-1i81w4j section .logoArea img.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:56px;max-height:56px}header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{width:100%}@media(min-width: 640px){header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:640px}}@media(min-width: 768px){header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:768px}}@media(min-width: 1024px){header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:1024px}}@media(min-width: 1280px){header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:1280px}}@media(min-width: 1536px){header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{max-width:1536px}}header.svelte-1i81w4j section nav.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{margin-left:auto;margin-right:auto;display:flex;justify-content:center;align-items:center;height:100%}header.svelte-1i81w4j section nav ul.svelte-1i81w4j.svelte-1i81w4j.svelte-1i81w4j{list-style-type:none}header.svelte-1i81w4j section nav ul.svelte-1i81w4j>li.svelte-1i81w4j.svelte-1i81w4j{display:inline-block}header.svelte-1i81w4j section nav ul.svelte-1i81w4j>li.svelte-1i81w4j>a.svelte-1i81w4j{color:white;padding:0.25rem;margin:0.5rem 1.25rem;transition:all 0.3s ease;border-bottom:3px solid transparent}header.svelte-1i81w4j section nav ul.svelte-1i81w4j>li.svelte-1i81w4j>a.svelte-1i81w4j:hover,header.svelte-1i81w4j section nav ul.svelte-1i81w4j>li.svelte-1i81w4j>a.active.svelte-1i81w4j{border-bottom:2px solid white}",
   map: null
 };
 const Header = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let $page, $$unsubscribe_page;
   $$unsubscribe_page = subscribe(page, (value) => $page = value);
-  $$result.css.add(css$2);
+  $$result.css.add(css$1);
   $$unsubscribe_page();
-  return `<header class="${"svelte-1yn6tb2"}"><section class="${"svelte-1yn6tb2"}"><div class="${"logoArea svelte-1yn6tb2"}"><a href="${"/"}"><img src="${"esports-logo.webp"}" alt="${"Retro LAN Party"}" class="${"svelte-1yn6tb2"}"></a></div>
-    <nav class="${"svelte-1yn6tb2"}"><ul class="${"svelte-1yn6tb2"}"><li class="${"svelte-1yn6tb2"}"><a href="${"/news"}" class="${escape(null_to_empty($page.routeId === "news" ? "active" : ""), true) + " svelte-1yn6tb2"}">News</a></li>
-        <li class="${"svelte-1yn6tb2"}"><a href="${"/termine"}" class="${escape(null_to_empty($page.routeId === "termine" ? "active" : ""), true) + " svelte-1yn6tb2"}">Termine</a></li>
-        <li class="${"svelte-1yn6tb2"}"><a href="${"/team"}" class="${escape(null_to_empty($page.routeId === "team" ? "active" : ""), true) + " svelte-1yn6tb2"}">Team</a></li>
-        <li class="${"svelte-1yn6tb2"}"><a href="${"/konzept"}" class="${escape(null_to_empty($page.routeId === "konzept" ? "active" : ""), true) + " svelte-1yn6tb2"}">Konzept</a></li></ul></nav></section>
+  return `<header class="${"svelte-1i81w4j"}"><section class="${"svelte-1i81w4j"}"><div class="${"logoArea svelte-1i81w4j"}"><a href="${"/"}"><img src="${"esports-logo.webp"}" alt="${"Retro LAN Party"}" class="${"svelte-1i81w4j"}"></a></div>
+    <nav class="${"svelte-1i81w4j"}"><ul class="${"svelte-1i81w4j"}"><li class="${"svelte-1i81w4j"}"><a href="${"/news"}" class="${escape(null_to_empty($page.routeId === "news" ? "active" : ""), true) + " svelte-1i81w4j"}">News</a></li>
+        <li class="${"svelte-1i81w4j"}"><a href="${"/termine"}" class="${escape(null_to_empty($page.routeId === "termine" ? "active" : ""), true) + " svelte-1i81w4j"}">Termine</a></li>
+        <li class="${"svelte-1i81w4j"}"><a href="${"/team"}" class="${escape(null_to_empty($page.routeId === "team" ? "active" : ""), true) + " svelte-1i81w4j"}">Team</a></li>
+        <li class="${"svelte-1i81w4j"}"><a href="${"/konzept"}" class="${escape(null_to_empty($page.routeId === "konzept" ? "active" : ""), true) + " svelte-1i81w4j"}">Konzept</a></li></ul></nav></section>
 </header>`;
 });
 const footer_svelte_svelte_type_style_lang = "";
-const css$1 = {
-  code: "footer.svelte-bvk0oq.svelte-bvk0oq{background-color:#363acc;opacity:0.9;width:100%;height:180px;z-index:9999}footer.svelte-bvk0oq section a.svelte-bvk0oq{color:white;padding:0 1.5rem 0 0}",
+const css = {
+  code: "footer.svelte-1ot9tn5.svelte-1ot9tn5{background-color:var(--primary);width:100%;height:175px;z-index:9999}footer.svelte-1ot9tn5 section.svelte-1ot9tn5{margin-left:auto;margin-right:auto;max-width:80rem;padding-left:1rem;padding-right:1rem;padding-top:2rem;padding-bottom:2rem}@media(min-width: 768px){footer.svelte-1ot9tn5 section.svelte-1ot9tn5{padding-left:1.5rem;padding-right:1.5rem;padding-top:2.75rem;padding-bottom:2.75rem}}footer.svelte-1ot9tn5 section a.svelte-1ot9tn5{color:white;padding:0 1.5rem 0 0}",
   map: null
 };
 const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -29,10 +29,10 @@ const Footer = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   } } = $$props;
   if ($$props.openCookieSettings === void 0 && $$bindings.openCookieSettings && openCookieSettings !== void 0)
     $$bindings.openCookieSettings(openCookieSettings);
-  $$result.css.add(css$1);
-  return `<footer class="${"svelte-bvk0oq"}"><section class="${"max-w-6xl mx-auto py-10"}"><a href="${"/impressum"}" class="${"svelte-bvk0oq"}">Impressum</a>
-    <a href="${"/datenschutz"}" class="${"svelte-bvk0oq"}">Datenschutz</a>
-    <a href="${"javascript:void(0)"}" class="${"svelte-bvk0oq"}">Cookie-Einstellungen</a></section>
+  $$result.css.add(css);
+  return `<footer class="${"svelte-1ot9tn5"}"><section class="${"svelte-1ot9tn5"}"><a href="${"/impressum"}" class="${"svelte-1ot9tn5"}">Impressum</a>
+    <a href="${"/datenschutz"}" class="${"svelte-1ot9tn5"}">Datenschutz</a>
+    <a${add_attribute("href", "#", 0)} class="${"svelte-1ot9tn5"}">Cookie-Einstellungen</a></section>
 </footer>`;
 });
 const style = "";
@@ -138,11 +138,6 @@ ${shown ? `<div class="${"cookieConsentWrapper"}"><div class="${"cookieConsent"}
 
 ${``}`;
 });
-const _layout_svelte_svelte_type_style_lang = "";
-const css = {
-  code: ".mainContentContainer.svelte-1if0rfl{min-height:calc(100vh - 260px)}",
-  map: null
-};
 const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   let gdprBanner;
   let choices = {
@@ -170,15 +165,12 @@ const Layout = create_ssr_component(($$result, $$props, $$bindings, slots) => {
   function showCookieBanner() {
     gdprBanner.show();
   }
-  $$result.css.add(css);
   let $$settled;
   let $$rendered;
   do {
     $$settled = true;
     $$rendered = `${validate_component(Header, "HEADER").$$render($$result, {}, {}, {})}
-
-<div class="${"mainContentContainer svelte-1if0rfl"}">${slots.default ? slots.default({}) : ``}</div>
-
+${slots.default ? slots.default({}) : ``}
 ${validate_component(Footer, "FOOTER").$$render($$result, { openCookieSettings: showCookieBanner }, {}, {})}
 
 ${validate_component(Banner, "GdprBanner").$$render(
